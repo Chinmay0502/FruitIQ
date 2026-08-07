@@ -1,14 +1,21 @@
+import os
+
+os.environ["CUDA_VISIBLE_DEVICES"] = "-1"
+os.environ["TF_CPP_MIN_LOG_LEVEL"] = "2"
+
 from flask import Flask, request, jsonify
 from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing import image
 import numpy as np
-import os
 
 app = Flask(__name__)
 
 # Load model
 MODEL_PATH = "fruits_classification_model.keras"
-model = load_model(MODEL_PATH)
+model = load_model(
+    MODEL_PATH,
+    compile=False
+)
 
 IMG_SIZE = (224, 224)
 
@@ -75,7 +82,7 @@ def predict():
 
 
 if __name__ == "__main__":
-    port = int(os.environ.get("PORT", 5001))
+    port = int(os.environ.get("PORT", 8080))
 
     app.run(
         host="0.0.0.0",
