@@ -1,14 +1,12 @@
 import axios from "axios";
 
-
 // ======================================================
 // AXIOS INSTANCE
 // ======================================================
 
 const api = axios.create({
-    baseURL: "http://localhost:5000/api"
+    baseURL: "https://fruitiq-backend.onrender.com/api"
 });
-
 
 // ======================================================
 // PREDICT FRUIT
@@ -85,20 +83,17 @@ export const getPrediction = async (id) => {
 
 export const getPredictionImageUrl = (id) => {
 
-    return `http://localhost:5000/api/predictions/${id}/image`;
-
+    return `https://fruitiq-backend.onrender.com/api/predictions/${id}/image`;
 };
 
 
 // ======================================================
 // GET PREDICTION IMAGE
 // ======================================================
-// Kept for compatibility with your existing Analysis.jsx
 
 export const getPredictionImage = (id) => {
 
-    return `http://localhost:5000/api/predictions/${id}/image`;
-
+    return `https://fruitiq-backend.onrender.com/api/predictions/${id}/image`;
 };
 
 
