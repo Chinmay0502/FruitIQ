@@ -1,7 +1,7 @@
 const axios = require("axios");
 const FormData = require("form-data");
 
-const Prediction = require("../models/Prediction");
+const Prediction = require("../models/prediction");
 
 // ======================================================
 // PREDICT IMAGE
